@@ -1,20 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
-
+{% block title %}Welcome to I-Madexe {{ controller_name }}!{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="src/css/bootstrap.css"></link> {% endblock %}
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+.bg-home{
+    left: 0px;
+    background-image: url("src/img/bg.jpg");
+    height: 600px;
+    background-size: cover;
+    width: 100%;
+}
 </style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">I-Madexe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="collapse navbar-collapse bg-transparent" id="navbarColor03">
+        <ul class="navbar-nav  ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#About">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Recent">Recent Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+            </li>
+        </ul>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/WelcomeController.php'|file_link(0) }}">src/Controller/WelcomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/welcome/index.html.twig'|file_link(0) }}">templates/welcome/index.html.twig</a></code></li>
-    </ul>
+    </div>
+</nav>
+
+<div class="bg-home">
+<div class="jumbotron">
+    <h1 class="display-3">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
 </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    <script  src="src/js/bootstrap.js"></script>
+     <script  src="src/js/bootstrap.bundle.js"></script>
+     <script  src="src/js/jquery.min.js"></script>
 {% endblock %}
