@@ -94,14 +94,14 @@ class Project
         return $this;
     }
 
-    public function getString(): ?string
+    public function getState(): ?string
     {
-        return $this->string;
+        return $this->state;
     }
 
-    public function setString(?string $string): self
+    public function setState(?string $string): self
     {
-        $this->string = $string;
+        $this->state = $string;
 
         return $this;
     }

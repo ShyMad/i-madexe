@@ -1,0 +1,55 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}Project index{% endblock %}
+
+{% block body %}
+   
+
+    <a href="{{ path('project_new') }}">Create new</a>
+     <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">My Dashboard</li>
+      </ol>
+       <h1>Project index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>DevDate</th>
+                <th>TechnologyUsed</th>
+                <th>State</th>
+                <th>Body</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.devDate ? project.devDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ project.technologyUsed }}</td>
+                <td>{{ project.state }}</td>
+                <td>{{ project.body }}</td>
+                <td>
+                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
+                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}

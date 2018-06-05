@@ -16,4 +16,13 @@ class BackendController extends Controller
             'controller_name' => 'BackendController',
         ]);
     }
+    /**
+     * @Route("/backend/formation", name="formation")
+     */
+    public function formation()
+    {
+        return $this->render('backend/formation.html.twig',[
+            'controller_name' => 'BackendController',
+        ]);
+    }
 }
