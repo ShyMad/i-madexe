@@ -5,60 +5,44 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="stylesheet" href="src/css/backend/bootstrap/bootstrap.min.css"></link> 
-        <link rel="stylesheet" href="src/css/font-awesome/css/font-awesome.min.css"></link> 
-        <link rel="stylesheet" href="src/css/backend/datatables/dataTables.bootstrap4.css"></link> 
-        <link rel="stylesheet" href="src/css/backend/sb-admin/sb-admin.min.css"></link>  
+        <link rel="stylesheet" href="{{ asset('src/css/backend/bootstrap/bootstrap.min.css') }}"></link> 
+        <link rel="stylesheet" href="{{ asset('src/css/font-awesome/css/font-awesome.min.css') }}"></link> 
+        <link rel="stylesheet" href="{{ asset('src/css/backend/data-tables/dataTables.bootstrap4.css') }}"></link> 
+        <link rel="stylesheet" href="{{ asset('src/css/backend/sb-admin/sb-admin.min.css') }}"></link>  
     </head>
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         {{ include('inc/back-nav.html.twig') }}
+    <div class="content-wrapper">
+        <div class="container-fluid">
+        {% block body %}
         
-        {% block body %}{% endblock %}
-
-        <footer class="sticky-footer">
-            <div class="container">
-                <div class="text-center">
-                <small>Copyright © I-madexe.com 2018</small>
-                </div>
-            </div>
-        </footer>
+        {% endblock %}
+        </div>
+    </div>
+        {{ include ('inc/back-footer.html.twig')}}
+        
          <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
+            <i class="fa fa-angle-up"></i>
         </a>
-         <!-- Logout Modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-            </div>
-        </div>
-        </div>
-        {% block javascripts %}{% endblock %}
+        {{ include('inc/back-logout.html.twig')}}
+        
      <!-- Bootstrap core JavaScript-->
-    <script src="src/js/backend/jquery/jquery.min.js"></script>
-    <script src="src/js/backend/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('src/js/backend/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('src/js/backend/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('src/js/backend/bootstrap/bootstrap-datepicker.js') }}"></script>
     <!-- Core plugin JavaScript-->
-    <script src="src/js/backend/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('src/js/backend/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="src/js/backend/chart.js/Chart.min.js"></script>
-    <script src="src/js/backend/datatables/jquery.dataTables.js"></script>
-    <script src="src/js/backend/datatables/dataTables.bootstrap4.js"></script>
+    <script src="{{ asset('src/js/backend/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('src/js/backend/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('src/js/backend/datatables/dataTables.bootstrap4.js') }}"></script>
     <!-- Custom scripts for all pages-->
-    <script src="src/js/backend/sb-admin/sb-admin.min.js"></script>
+    <script src="{{ asset('src/js/backend/sb-admin/sb-admin.min.js') }}"></script>
     <!-- Custom scripts for this page-->
-    <script src="src/js/backend/sb-admin/sb-admin-datatables.min.js"></script>
-    <script src="src/js/backend/sb-admin/sb-admin-charts.min.js"></script>
+    <script src="{{ asset('src/js/backend/sb-admin/sb-admin-datatables.min.js') }}"></script>
+    <script src="{{ asset('src/js/backend/sb-admin/sb-admin-charts.min.js') }}"></script>
+    {% block javascripts %}{% endblock %}
     </body>
 
 </html>

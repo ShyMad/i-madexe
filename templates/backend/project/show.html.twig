@@ -1,8 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'back-base.html.twig' %}
 
 {% block title %}Project{% endblock %}
 
 {% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/backend/project">Project</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
     <h1>Project</h1>
 
     <table class="table">

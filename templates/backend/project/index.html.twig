@@ -3,19 +3,14 @@
 {% block title %}Project index{% endblock %}
 
 {% block body %}
-   
-
-    <a href="{{ path('project_new') }}">Create new</a>
-     <div class="content-wrapper">
-    <div class="container-fluid">
     <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="/backend">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
       </ol>
-       <h1>Project index</h1>
+    <h1>Project index</h1>
 
     <table class="table">
         <thead>
@@ -50,6 +45,7 @@
         {% endfor %}
         </tbody>
     </table>
-    </div>
-</div>
+
+    <a href="{{ path('project_new') }}">Create new</a>
+ 
 {% endblock %}
