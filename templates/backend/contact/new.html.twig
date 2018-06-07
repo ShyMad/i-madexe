@@ -1,0 +1,20 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}New Contact{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/backend/contact">Contact</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
+    <h1>Create new Contact</h1>
+
+    {{ include('backend/contact/_form.html.twig') }}
+
+    <a href="{{ path('contact_index') }}">back to list</a>
+{% endblock %}

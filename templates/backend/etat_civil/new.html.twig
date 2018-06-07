@@ -1,0 +1,20 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}New EtatCivil{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/backend/etat_civil">Etat civil</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
+    <h1>Create new EtatCivil</h1>
+
+    {{ include('backend/etat_civil/_form.html.twig') }}
+
+    <a href="{{ path('etat_civil_index') }}">back to list</a>
+{% endblock %}

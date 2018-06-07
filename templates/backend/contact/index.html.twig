@@ -1,0 +1,52 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}Contact index{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+       
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
+    <h1>Contact index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mail</th>
+                <th>Tel</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Cp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.mail }}</td>
+                <td>{{ contact.tel }}</td>
+                <td>{{ contact.address }}</td>
+                <td>{{ contact.country }}</td>
+                <td>{{ contact.city }}</td>
+                <td>{{ contact.cp }}</td>
+                <td>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contact_new') }}">Create new</a>
+{% endblock %}

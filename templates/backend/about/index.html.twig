@@ -1,0 +1,41 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}About index{% endblock %}
+
+{% block body %}
+ <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
+    <h1>About index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Resume</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for about in abouts %}
+            <tr>
+                <td>{{ about.id }}</td>
+                <td>{{ about.resume }}</td>
+                <td>
+                    <a href="{{ path('about_show', {'id': about.id}) }}">show</a>
+                    <a href="{{ path('about_edit', {'id': about.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('about_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}EtatCivil index{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+      </ol>
+    <h1>EtatCivil index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>Nationality</th>
+                <th>Permis</th>
+                <th>Fonction</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etat_civil in etat_civils %}
+            <tr>
+                <td>{{ etat_civil.id }}</td>
+                <td>{{ etat_civil.firstName }}</td>
+                <td>{{ etat_civil.lastName }}</td>
+                <td>{{ etat_civil.age }}</td>
+                <td>{{ etat_civil.nationality }}</td>
+                <td>{{ etat_civil.permis }}</td>
+                <td>{{ etat_civil.fonction }}</td>
+                <td>
+                    <a href="{{ path('etat_civil_show', {'id': etat_civil.id}) }}">show</a>
+                    <a href="{{ path('etat_civil_edit', {'id': etat_civil.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('etat_civil_new') }}">Create new</a>
+{% endblock %}

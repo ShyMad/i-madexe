@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fromation index{% endblock %}
+
+{% block body %}
+    <h1>Fromation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>YearOfStart</th>
+                <th>YearOfEnd</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fromation in fromations %}
+            <tr>
+                <td>{{ fromation.id }}</td>
+                <td>{{ fromation.title }}</td>
+                <td>{{ fromation.country }}</td>
+                <td>{{ fromation.city }}</td>
+                <td>{{ fromation.yearOfStart }}</td>
+                <td>{{ fromation.yearOfEnd }}</td>
+                <td>
+                    <a href="{{ path('fromation_show', {'id': fromation.id}) }}">show</a>
+                    <a href="{{ path('fromation_edit', {'id': fromation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('fromation_new') }}">Create new</a>
+{% endblock %}

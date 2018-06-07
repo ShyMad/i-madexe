@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fromation{% endblock %}
+
+{% block body %}
+    <h1>Fromation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fromation.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ fromation.title }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ fromation.country }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ fromation.city }}</td>
+            </tr>
+            <tr>
+                <th>YearOfStart</th>
+                <td>{{ fromation.yearOfStart }}</td>
+            </tr>
+            <tr>
+                <th>YearOfEnd</th>
+                <td>{{ fromation.yearOfEnd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fromation_index') }}">back to list</a>
+
+    <a href="{{ path('fromation_edit', {'id': fromation.id}) }}">edit</a>
+
+    {{ include('fromation/_delete_form.html.twig') }}
+{% endblock %}

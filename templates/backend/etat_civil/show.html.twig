@@ -1,0 +1,55 @@
+{% extends 'back-base.html.twig' %}
+
+{% block title %}EtatCivil{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/backend">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/backend/etat_civil">Etat civil</a>
+        </li>
+        <li class="breadcrumb-item active">{{ tag }}</li>
+    </ol>
+    <h1>EtatCivil</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etat_civil.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ etat_civil.firstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ etat_civil.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ etat_civil.age }}</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>{{ etat_civil.nationality }}</td>
+            </tr>
+            <tr>
+                <th>Permis</th>
+                <td>{{ etat_civil.permis }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ etat_civil.fonction }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etat_civil_index') }}">back to list</a>
+
+    <a href="{{ path('etat_civil_edit', {'id': etat_civil.id}) }}">edit</a>
+
+    {{ include('backend/etat_civil/_delete_form.html.twig') }}
+{% endblock %}

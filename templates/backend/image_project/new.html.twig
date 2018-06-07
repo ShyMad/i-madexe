@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ImageProject{% endblock %}
+
+{% block body %}
+    <h1>Create new ImageProject</h1>
+
+    {{ include('image_project/_form.html.twig') }}
+
+    <a href="{{ path('image_project_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Fromation{% endblock %}
+
+{% block body %}
+    <h1>Edit Fromation</h1>
+
+    {{ include('fromation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('fromation_index') }}">back to list</a>
+
+    {{ include('fromation/_delete_form.html.twig') }}
+{% endblock %}
